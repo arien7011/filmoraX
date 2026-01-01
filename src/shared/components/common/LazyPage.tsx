@@ -1,7 +1,6 @@
 import { Suspense } from 'react';
 import { LoadingSpinner } from './LoadingSpinner';
 
-
 interface LazyPageProps {
   children: React.ReactNode;
 }

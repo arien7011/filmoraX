@@ -1,44 +1,40 @@
-import { MainLayout } from '@/shared/components';
-import { LazyPage } from '@/shared/components/common';
-import { lazy } from 'react';
 import { createBrowserRouter, Navigate } from 'react-router-dom';
-
-// Lazy load pages
-const LandingPage = lazy(() => import('@/pages/LandingPage'));
-const HomePage = lazy(() => import('@/pages/HomePage'));
-const MovieDetailPage = lazy(() => import('@/pages/MovieDetailPage'));
-const SearchPage = lazy(() => import('@/pages/SearchPage'));
-const FavoritesPage = lazy(() => import('@/pages/FavoritesPage'));
-const MoviesPage = lazy(() => import('@/pages/MoviesPage'));
-const NotFoundPage = lazy(() => import('@/pages/NotFoundPage'));
+import { MainLayout } from '@/shared/components';
+import { LandingPage } from '@/pages/LandingPage';
+import { HomePage } from '@/pages/HomePage';
+import { MovieDetailPage } from '@/pages/MovieDetailPage';
+import { SearchPage } from '@/pages/SearchPage';
+import { FavoritesPage } from '@/pages/FavoritesPage';
+import { MoviesPage } from '@/pages/MoviesPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <LazyPage><LandingPage /></LazyPage>,
+    element: <LandingPage />,
   },
   {
     element: <MainLayout />,
     children: [
       {
         path: '/home',
-        element: <LazyPage><HomePage /></LazyPage>,
+        element: <HomePage />,
       },
       {
         path: '/movie/:id',
-        element: <LazyPage><MovieDetailPage /></LazyPage>,
+        element: <MovieDetailPage />,
       },
       {
         path: '/movies/:category',
-        element: <LazyPage><MoviesPage /></LazyPage>,
+        element: <MoviesPage />,
       },
       {
         path: '/search',
-        element: <LazyPage><SearchPage /></LazyPage>,
+        element: <SearchPage />,
       },
       {
         path: '/favorites',
-        element: <LazyPage><FavoritesPage /></LazyPage>,
+        element: <FavoritesPage />,
       },
       {
         path: '/profile',
@@ -56,6 +52,6 @@ export const router = createBrowserRouter([
   },
   {
     path: '*',
-    element: <LazyPage><NotFoundPage /></LazyPage>,
+    element: <NotFoundPage />,
   },
 ]);

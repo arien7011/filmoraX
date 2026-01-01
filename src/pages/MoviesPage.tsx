@@ -23,4 +23,4 @@ export function MoviesPage() {
     </div>
   );
 }
-export default MoviesPage;
+// export default MoviesPage;

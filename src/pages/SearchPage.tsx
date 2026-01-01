@@ -67,4 +67,4 @@ export function SearchPage() {
     </div>
   );
 }
-export default SearchPage;
+// export default SearchPage;

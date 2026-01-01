@@ -44,4 +44,4 @@ export function NotFoundPage() {
     </div>
   );
 }
-export default NotFoundPage;
+// export default NotFoundPage;
